@@ -4,7 +4,8 @@ new Vue({
     name:"Nonpavit Detbun",
     job:"Front-End Developer",
     age:22,
-    status:false
+    status:false,
+    github: 'https://github.com/NLGRF'
   },
   methods: {
     getName:function() {
