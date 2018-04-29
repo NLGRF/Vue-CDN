@@ -5,6 +5,7 @@ new Vue({
     job:"Front-End Developer",
     age:22,
     status:false,
+    count:0,
     github: 'https://github.com/NLGRF'
   },
   methods: {
@@ -21,6 +22,10 @@ new Vue({
     subtractAge:function(){
       this.age--;
       console.log(this.age);
+    },
+    addCount:function(){
+      this.count++;
+      console.log(this.count);
     }
   }
 })
