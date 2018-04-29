@@ -15,13 +15,21 @@
           <label>พิซซ่า</label>
           <input type="checkbox" value="มาม่า" v-model="foods">
           <label>มาม่า</label>
-
+          <br>
+          Gender :
+          <br>
+          <input type="radio" value="Male" v-model="gender">
+          <label>Male</label>
+          <br>
+          <input type="radio" value="Female" v-model="gender">
+          <label>Female</label>
           <br>
           <hr>
           <h1>Name : {{name}}</h1>
           <h1>Job : {{job}}</h1>
           <h1>Github : <a v-bind:href="github">NLGRF</a></h1>
           <h1>Foods : {{foods}}</h1>
+          <h1>Gender : {{gender}}</h1>
         </div>
         <script src="app.js" charset="utf-8"></script>
 
