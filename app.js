@@ -2,7 +2,7 @@ new Vue({
   el:"#vue-app",
   data:{
     name:"Nonpavit Detbun",
-    job:"Front-End Developer",
+    job:"",
     foods:[],
     gender:'',
     github: 'https://github.com/NLGRF'

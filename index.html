@@ -24,6 +24,13 @@
           <input type="radio" value="Female" v-model="gender">
           <label>Female</label>
           <br>
+          Job :
+          <select v-model="job">
+          <option disabled value="">Select My Job</option>
+          <option>Programmer</option>
+          <option>Sale</option>
+          <option>Student</option>
+          </select>
           <hr>
           <h1>Name : {{name}}</h1>
           <h1>Job : {{job}}</h1>
