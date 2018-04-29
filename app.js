@@ -13,6 +13,14 @@ new Vue({
     },
     setName:function(n) {
       return this.name=n
+    },
+    addAge:function() {
+      this.age++;
+      console.log(this.age);
+    },
+    subtractAge:function(){
+      this.age--;
+      console.log(this.age);
     }
   }
 })
