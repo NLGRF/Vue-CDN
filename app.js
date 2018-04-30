@@ -1,26 +1,16 @@
-var post = new Vue({
-    el:"#post",
-    data:{
-      title:'Project Name',
-      message:'Project Details'
+Vue.component('Non',{
+  data:function(){
+    return{
+      count:0
     }
-});
-
-var comment = new Vue({
-  el:"#comment",
-  data:{
-    text:'อากาศดีมาก'
-  }
-});
-
-var likeSystem = new Vue({
-  el:"#likeSystem",
-  data:{
-    like:false
   },
-  methods: {
-    changeLike:function() {
-      console.log("like");
-    }
-  }
+  template:'<button v-on:click="count++">Clike : {{count}}</button>'
 });
+
+Vue.component('Post',{
+  template:'<h3>New Post</h3>'
+});
+
+new Vue({
+  el:"#vue-app"
+})
