@@ -25,5 +25,24 @@ new Vue({
       this.newData.empName='';
       this.newData.salary=0;
     }
-  }
-})
+  },
+  computed:{
+     // แยกมาจัดการด้านการคำนวณ
+      summation:function(){
+        var sum = this.empGroup.reduce(function(value, data) {
+          return value + Number(data.salary);
+          // 0+5000 = 5000
+          // 5000+4000 = 9000
+        }, 0);
+        return sum;
+      },
+      avg:function(){
+        var sum = this.empGroup.reduce(function(value, data) {
+          return value + Number(data.salary);
+          // 0+5000 = 5000
+          // 5000+4000 = 9000
+        }, 0);
+        return sum/this.empGroup.length;
+      }
+    }
+});
