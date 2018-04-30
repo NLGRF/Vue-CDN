@@ -8,7 +8,8 @@ Vue.component('Non',{
 });
 
 Vue.component('Post',{
-  template:'<h3>New Post</h3>'
+  props: ['title'],
+  template:'<h3>{{title}}</h3>'
 });
 
 new Vue({
