@@ -7,16 +7,18 @@
   </head>
   <body>
         <div id="vue-app">
-          <!--  <button type="button" v-on:click="like=true">Like</button> -->
-            <button type="button" v-on:click="like=!like">Like</button>
-            <h1 v-if="like">Hello</h1>
-            <ul>
-              <li v-for="result in product">{{result}}</li>
-            </ul>
-
-            <ul>
-              <li v-for="emp in employee">{{emp.name}} | {{emp.age}}</li>
-            </ul>
+          <span>ชื่อพนักงาน</span>
+          <input v-model="newData.empName">
+          <span>เงินเดือน</span>
+          <input v-model="newData.salary">
+          <br><br>
+          <button @click="addEmp">บันทึกข้อมูล</button>
+          <br>
+          <ul>
+            <li v-for="emp in empGroup">
+              {{emp.empName}} ได้เงินเดือน {{emp.salary}}
+            </li>
+          </ul>
         </div>
         <script src="app.js" charset="utf-8"></script>
 
