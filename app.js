@@ -24,6 +24,11 @@ new Vue({
       });
       this.newData.empName='';
       this.newData.salary=0;
+    },
+    showMessage:function(){
+      // console.log("บันทึกข้อมูลเรียบร้อย");
+      alert("Complete");
+      console.log("Send Data...");
     }
   },
   computed:{
@@ -43,6 +48,13 @@ new Vue({
           // 5000+4000 = 9000
         }, 0);
         return sum/this.empGroup.length;
+      }
+    },
+    watch: {
+      //หลังจากที่ summation ทำงานเสร็จ
+      summation:function() {
+        //ทำอะไร
+        this.showMessage();
       }
     }
 });
