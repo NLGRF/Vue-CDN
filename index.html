@@ -10,6 +10,13 @@
           <!--  <button type="button" v-on:click="like=true">Like</button> -->
             <button type="button" v-on:click="like=!like">Like</button>
             <h1 v-if="like">Hello</h1>
+            <ul>
+              <li v-for="result in product">{{result}}</li>
+            </ul>
+
+            <ul>
+              <li v-for="emp in employee">{{emp.name}} | {{emp.age}}</li>
+            </ul>
         </div>
         <script src="app.js" charset="utf-8"></script>
 
