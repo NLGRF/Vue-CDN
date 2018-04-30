@@ -6,15 +6,23 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
   </head>
   <body>
+    <h4>Menu</h4>
     <div id="vue-app">
-      <ul>
-        <li v-for="comment in comments"
-        is="Showcomment"
-        v-bind:commentpost="comment"
-        ></li>
-      </ul>
-      <input type="text" v-model="newComment" v-on:keyup.enter="addComment">
+      <food-app>
+        <h2>Food Tpye</h2>
+        <ul>
+          <li>A</li>
+          <li>B</li>
+          <li>C</li>
+        </ul>
+      </food-app>
     </div>
+    <template id="foodarea">
+      <div id="food">
+        <slot></slot>
+      </div>
+
+    </template>
         <script src="app.js" charset="utf-8"></script>
 
   </body>
