@@ -26,6 +26,23 @@ Vue.component('Showview',{
   template:'<h3>{{title}} | {{view}}</h3>'
 });
 
+Vue.component('Showcomment',{
+  props: ['commentpost'],
+  template:'<li><i>{{commentpost}}</i></li>'
+})
+
 new Vue({
-  el:"#vue-app"
+  el:"#vue-app",
+  data:{
+    newComment:'',
+    comments:[
+      'AAA','BBB','CCC','DDD'
+    ]
+  },
+  methods: {
+    addComment:function() {
+      this.comments.push(this.newComment)
+      this.newComment=''
+    }
+  }
 })
