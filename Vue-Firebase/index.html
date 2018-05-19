@@ -30,15 +30,23 @@
                 <!-- display comment -->
                 <div class="card" v-for="message in messages">
                     <div class="card-body">
-                        <h5 class="card-title">{{message.text}}</h5>
+                        <h5 class="card-title" v-if="message!=editText">{{message.text}}</h5>
+                        <textarea v-else name="name" class="form-control" v-model="messageText"></textarea>
                         <p class="card-text text-muted">{{message.name}}</p>
                         <!-- <p class="card-text text-muted">{{message.id}}</p> -->
-                        <a href="#" class="card-link" @click.prevent="deleteMessage(message)">Del</a>
+                        <div v-if="message!=editText">
+                            <a href="#" class="card-link" @click.prevent="deleteMessage(message)">Del</a>
+                            <a href="#" class="card-link" @click.prevent="editMessage(message)">Edit</a>
+                        </div>
+                        <div v-else>
+                            <a href="#" class="card-link" @click.prevent="cancelMessage()">Cancel</a>
+                            <a href="#" class="card-link" @click.prevent="updateMessage()">Update</a>
+                        </div>
                     </div>
                 </div>
                 <hr>
                 <!-- form design -->
-                <form class="form-group" @submit.prevent="storeMessage">
+                <form v-if="!editText" class="form-group" @submit.prevent="storeMessage">
                     <div>
                         <textarea name="name" class="form-control" v-model="messageText"></textarea>
                     </div>

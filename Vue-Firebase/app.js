@@ -7,7 +7,8 @@ new Vue({
     data:{
         messageText:'',
         messages:[],
-        name:'Non'
+        name:'Non',
+        editText:null
     },
     methods:{
         storeMessage:function(){
@@ -18,6 +19,18 @@ new Vue({
         },
         deleteMessage:function(message){
             messageRef.child(message.id).remove()
+        },
+        editMessage:function(message){
+            this.editText=message
+            this.messageText=message.text
+        },
+        cancelMessage:function(){
+            this.editText=null
+            this.messageText=''
+        },
+        updateMessage:function(){
+            messageRef.child(this.editText.id).update({text:this.messageText})
+            this.cancelMessage()
         }
     },
     created(){
@@ -31,6 +44,11 @@ new Vue({
             const deleteText = this.messages.find(message=>message.id == snapshot.key)
             const index = this.messages.indexOf(deleteText)
             this.messages.splice(index,1)
+
+        })
+        messageRef.on('child_changed',snapshot=>{
+            const updateText = this.messages.find(message=>message.id == snapshot.key)
+            updateText.text = snapshot.val().text
 
         })
     }
