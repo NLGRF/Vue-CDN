@@ -1,3 +1,7 @@
+// manage database
+const database = firebase.database();
+const messageRef = database.ref("message");
+
 new Vue({
     el:"#vue-app",
     data:{
@@ -7,10 +11,13 @@ new Vue({
     },
     methods:{
         storeMessage:function(){
-            this.messages.push({text:this.messageText,name:this.name})
+            messageRef.push({text:this.messageText,name:this.name})
             this.messagesText=''
             console.log(this.messages);
             
         }
+    },
+    created(){
+
     }
 })
