@@ -32,6 +32,8 @@
                     <div class="card-body">
                         <h5 class="card-title">{{message.text}}</h5>
                         <p class="card-text text-muted">{{message.name}}</p>
+                        <!-- <p class="card-text text-muted">{{message.id}}</p> -->
+                        <a href="#" class="card-link" @click.prevent="deleteMessage(message)">Del</a>
                     </div>
                 </div>
                 <hr>
@@ -40,7 +42,7 @@
                     <div>
                         <textarea name="name" class="form-control" v-model="messageText"></textarea>
                     </div>
-                    <label for="">ชื่อ :</label><br>
+                    <label for="">Name :</label><br>
                     <input type="text" class="form-control" v-model="name"><br>
                     <button type="submit" class="btn btn-primary">Comment</button>
                 </form>

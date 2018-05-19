@@ -15,13 +15,22 @@ new Vue({
             this.messagesText=''
             // console.log(this.messages);
             
+        },
+        deleteMessage:function(message){
+            messageRef.child(message.id).remove()
         }
     },
     created(){
         messageRef.on('child_added',snapshot=>{
             // message
-            this.messages.push(snapshot.val())
-            console.log(snapshot.val());
+            this.messages.push({...snapshot.val(),id:snapshot.key})
+            // console.log(snapshot.val());
+
+        })
+        messageRef.on('child_removed',snapshot=>{
+            const deleteText = this.messages.find(message=>message.id == snapshot.key)
+            const index = this.messages.indexOf(deleteText)
+            this.messages.splice(index,1)
 
         })
     }
