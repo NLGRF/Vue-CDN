@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini Workshop</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container" id="app">
+        <h2 align="center">Mini Workshop Limit Character</h2>
+        <div class="form-group">
+            <div class="input-group">
+                <input type="text" name="" value="" class="form-control" v-model="text" :maxLength="max">
+                <div class="input-group-addon" v-text="(max-text.length)"></div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script type="text/javascript">
+    new Vue({
+        el:'#app',
+        data:{
+            max:20,
+            text:''
+        }
+    })
+</script>
+</html>

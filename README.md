@@ -22,3 +22,7 @@
 * Props Validate
 * Data & Component
 * Slots
+
+## Workshop
+* Firebase
+* Limit Character
