@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mini Workshop</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+    <div class="container" id="app">
+        <h2 align="center">Mini Workshop Upload Image</h2>
+        <div v-if="!image">
+            <input type="file" class="form-control" @change="onFileChange">
+        </div>
+        <div v-else>
+            <img :src="image" width="600px" height="400px" class="img-responsive center-block"/><br>
+            <button type="button" class="btn btn-danger center-block" @click="removeImage">Remove</button>
+        </div>
+    </div>
+    <script src="app.js" charset="utf-8"></script>
+    
+</body>
+</html>
