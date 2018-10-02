@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <title>Mini Workshop</title>
+</head>
+<body>
+
+<style media="screen">
+    * {
+        box-sizing: border-box;
+        }
+    body {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        font-family: arial, sans-serif;
+        color: #878787;
+        }
+    select {
+        padding: 5px 10px;
+        width: 150px;
+        height: 25px;
+        font-size: 13px;
+        color: #555;
+        border: 1px solid #ccc;
+        }
+    #weather {
+        margin: auto;
+        max-width: 632px;
+        }
+    #setting {
+        margin: 20px 0;
+        }
+    #display {
+        padding: 20px 16px 24px 16px;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+        background-color: #ffffff;
+        }
+    #top {
+        margin-bottom: 20px;
+        }
+    #top .location {
+        font-size: 24px;
+        line-height: 1.2;
+        }
+    #top .time {
+        font-size: 16px;
+        line-height: 2;
+        }
+    #top .status {
+        font-size: 13px;
+        line-height: 1.4
+        }
+    #left{
+        color: #212121;
+        }
+    #left .thumbnail {
+        float: left;
+        height: 64px;
+        width: 64px;
+        }
+        
+    #left .temperature {
+        float: left;
+        margin-top: -3px;
+        padding-left: 10px;
+        font-size: 64px;
+        }
+    #left .unit {
+        float: left;
+        margin-top: 6px;
+        font-size: 20px;
+        }
+    #right {
+        float: right;
+        padding-left: 5px;
+        line-height: 22px;
+        padding-top: 2px;
+        min-width: 43%;
+        font-weight: lighter;
+        }
+    #forecast {
+        padding-top: 10px;
+        clear: both;
+        }
+    #forecast ul {
+        padding: 0;
+        margin: 15px 0 5px 0;
+        }
+    #forecast ul li {
+        display: inline-block;
+        height: 90px;
+        width: 73px;
+        text-align: center;
+        line-height: 1;
+        }
+</style>
+
+    <div class="container" id="weather">
+    <h2 align="center">Mini Workshop : Weather Forecast System</h2>
+    <div id="setting">
+        <h3>Choose Province</h3>
+        <select class="form-control">
+            <option value="1225448">Bangkok</option>
+        </select>
+    </div>
+    <div v-if="!error" id="display">
+        <div id="top">
+            <div class="location">{{location}}</div>
+            <div class="time">{{displayDate}}</div>
+            <div class="status">{{status}}</div>
+        </div>
+        <div id="left">
+            <img :src="getThumbnail(status,64)" class="thumbnail"/>
+            <div class="temperature">{{temperature}}</div>
+            <div class="unit">°C</div>
+        </div>
+        <div id="right">
+            <span>Humidity : {{humidity}} %</span><br>
+            <span>Pressure : {{pressure}} inches</span><br>
+            <span>Wind Speed : {{wind}} mph</span>
+        </div>
+        <div id="forecast" align="center">
+            <ul>
+                <li v-for="(f,i) in forecast" v-if="i<7">
+                    <div>{{f.day}}</div>
+                    <img :src="getThumbnail(f.text,64)" class="thumbnail"/>
+                    <b>{{f.high}}°</b>{{f.low}}°
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <script src="app.js" charset="utf-8"></script>
+</body>
+</html>
