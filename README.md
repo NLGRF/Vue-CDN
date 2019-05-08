@@ -1,7 +1,8 @@
 # Basic Vue Course not use Vue-Cli
 ## Doc. : https://vuejs.org/
 ![alt text](http://www.mindphp.com/images/knowledge/122560/vue.jpg)
-## Course-Outline
+# Course-Outline
+## Basic
 * Hello World & Expression
 * Data & Method
 * Data Binding
@@ -23,10 +24,9 @@
 * Data & Component
 * Slots
 
-## Workshop
-* Firebase
-* Limit Character
-* Shopping Cart
-* Upload Image
-* Weather Forecast System
-* IoT System
+## Mini_Workshop
+* Vue-Firebase
+* Limit_Character
+* Shopping_Cart
+* Upload_Image
+* Weather_Forecast_System

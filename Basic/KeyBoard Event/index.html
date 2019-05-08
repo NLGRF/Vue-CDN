@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  </head>
+  <body>
+        <div id="vue-app">
+          <!-- <h1>{{getName()}}</h1> -->
+          <!-- <h1>{{setName('Soul')}}</h1> -->
+          <h1>Name : {{name}}</h1>
+          <h1>Job : {{job}}</h1>
+          <h1>Age : {{age}}</h1>
+          <h1>Github : <a v-bind:href="github">NLGRF</a></h1>
+          <input type="text" v-on:keyup.enter="addCount">
+          <h1>Count : {{count}}</h1>
+          <button type="button" name="button" v-on:click="addAge">Add</button>
+          <button type="button" name="button" v-on:click="subtractAge">Subtract</button>
+        </div>
+        <script src="app.js" charset="utf-8"></script>
+
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue.js Website</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  </head>
+  <body>
+        <div id="vue-app">
+          Name : <input type="text" v-model="name">
+          Food Fav :
+          <input type="checkbox" value="ส้มตำ" v-model="foods">
+          <label>ส้มตำ</label>
+          <input type="checkbox" value="พิซซ่า" v-model="foods">
+          <label>พิซซ่า</label>
+          <input type="checkbox" value="มาม่า" v-model="foods">
+          <label>มาม่า</label>
+          <br>
+          Gender :
+          <br>
+          <input type="radio" value="Male" v-model="gender">
+          <label>Male</label>
+          <br>
+          <input type="radio" value="Female" v-model="gender">
+          <label>Female</label>
+          <br>
+          <hr>
+          <h1>Name : {{name}}</h1>
+          <h1>Job : {{job}}</h1>
+          <h1>Github : <a v-bind:href="github">NLGRF</a></h1>
+          <h1>Foods : {{foods}}</h1>
+          <h1>Gender : {{gender}}</h1>
+        </div>
+        <script src="app.js" charset="utf-8"></script>
+
+  </body>
+</html>
